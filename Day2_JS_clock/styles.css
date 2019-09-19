@@ -1,0 +1,140 @@
+html {
+  background: #018ded
+    url(https://images.unsplash.com/photo-1487846418109-474dd0e7b64b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  background-size: cover;
+  font-family: "helvetica neue";
+  text-align: center;
+  font-size: 10px;
+}
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  /* background-color: silver; */
+  background-image: url(https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60);
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  /* background: 50%; */
+  padding: 2rem;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock .number {
+  --rotation: 0;
+  position: absolute;
+  font-size: 1.5em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* set rotation to zero by default */
+  /* To rotate the numbers */
+  transform: rotate(var(--rotation));
+  /* background-color: red; */
+}
+.clock .number1 {
+  --rotation: 30deg;
+}
+.clock .number2 {
+  --rotation: 60deg;
+}
+.clock .number3 {
+  --rotation: 90deg;
+}
+.clock .number4 {
+  --rotation: 120deg;
+}
+.clock .number5 {
+  --rotation: 150deg;
+}
+
+.clock .number6 {
+  --rotation: 180deg;
+}
+.clock .number7 {
+  --rotation: 210deg;
+}
+.clock .number8 {
+  --rotation: 240deg;
+}
+.clock .number9 {
+  --rotation: 270deg;
+}
+.clock .number10 {
+  --rotation: 300deg;
+}
+.clock .number11 {
+  --rotation: 330deg;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.clock-face .hand {
+  --rotation: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  border: 1px solid white;
+  width: 10px;
+  background-color: black;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 10;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock .second-hand {
+  width: 3px;
+  height: 80px;
+  background-color: blanchedalmond;
+}
+
+.clock .min-hand {
+  width: 3px;
+  height: 100px;
+  background-color: orange;
+}
+
+.clock .hour-hand {
+  width: 6px;
+  height: 120px;
+  background-color: black;
+}
+
+/* This selector is to insert the dot uniting the hands in the clock */
+.clock-face::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  /* To make the dop appear on top of the pointers/hands */
+  z-index: 11;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* now to center this dot*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .hand {
+  transition: all 0.5s;
+} */
