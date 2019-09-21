@@ -12,6 +12,40 @@ const inventors = [
   { first: "Lise", last: "Meitner", year: 1878, passed: 1968 },
   { first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 }
 ];
+
+// 1. Filter all people born in the 1500s
+const born1500s = inventors.filter(inventor => {
+  if (inventor.year >= 1500 && inventor.year < 1600) {
+    return true;
+  }
+});
+console.table(born1500s);
+
+// 2. Get inventors first and last name
+const fullNames = inventors.map(
+  inventor => `${inventor.first} ${""}${inventor.last}`
+);
+console.log(fullNames);
+
+// 3.Sort inventors by their birthdate from oldest to youngest
+const oldToYoung = inventors.sort((inventor1, inventor2) =>
+  inventor1.year > inventor2.year ? 1 : -1
+);
+console.table(oldToYoung);
+
+// 4. Total number of years lived by all invetors
+const totalYears = inventors.reduce((total, inventor) => {
+  return total + (inventor.passed - inventor.year);
+}, 0);
+console.log(totalYears);
+
+// 5. Sort inventors number of years lived
+const yearsLived = inventors.sort((inventor1, inventor2) => {
+  const a = inventor1.passed - inventor1.year;
+  const b = inventor2.passed - inventor2.year;
+  return a > b ? 1 : -1;
+});
+console.table(yearsLived);
 const people = [
   "Beck, Glenn",
   "Becker, Carl",
@@ -56,47 +90,11 @@ const people = [
   "Blake, William"
 ];
 
-// 1. Filter all people born in the 1500s
-const born1500s = inventors.filter(inventor => {
-  if (inventor.year >= 1500 && inventor.year < 1600) {
-    return true;
-  }
+// 6. Sort people alphabetically by last name
+const peopleOrder = people.sort((lastOne, nextOne) => {
+  const [aLast, aFirst] = lastOne.split(" ");
+  const [bLast, bFirst] = nextOne.split(" ");
+  return aLast > bLast ? 1 : -1;
 });
-console.table(born1500s);
 
-// 2. Get inventors first and last name
-const fullNames = inventors.map(
-  inventor => `${inventor.first} ${""}${inventor.last}`
-);
-console.log(fullNames);
-
-// 3.Sort inventors by their birthdate from oldest to youngest
-const oldToYoung = inventors.sort((inventor1, inventor2) =>
-  inventor1.year > inventor2.year ? 1 : -1
-);
-console.table(oldToYoung);
-
-// 4. Total number of years lived by all invetors
-const totalYears = inventors.reduce((total, inventor) => {
-  return total + (inventor.passed - inventor.year);
-}, 0);
-console.log(totalYears);
-
-// 5. Sort invetors by years lived
-
-const data = [
-  "car",
-  "car",
-  "truck",
-  "truck",
-  "bike",
-  "walk",
-  "car",
-  "van",
-  "bike",
-  "walk",
-  "car",
-  "van",
-  "car",
-  "truck"
-];
+console.log(peopleOrder);
