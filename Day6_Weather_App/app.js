@@ -47,7 +47,7 @@ function showError(error) {
 
 // To get the current weather by geographic coordinates
 function getWeather(latitude, longitude) {
-  let weatherAPI = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIkey}`;
+  let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIkey}`;
 
   fetch(weatherAPI)
     .then(response => {
