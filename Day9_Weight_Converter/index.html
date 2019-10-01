@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Weight Converter</title>
+  </head>
+  <style>
+    body {
+      margin-top: 70px;
+      background: #333;
+      color: #fff;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1 class="display-4 text-center mb-3">
+            Weight Converter
+          </h1>
+          <form>
+            <div class="form-group">
+              <input
+                id="ibsInput"
+                type="number"
+                class="form-control form-controls-lg"
+                placeholder="Enter Pounds"
+              />
+            </div>
+          </form>
+          <div id="output">
+            <div class="card bg-primary mb-2">
+              <div class="card-block">
+                <h4>
+                  Grams:
+                </h4>
+                <div id="gramsOutput"></div>
+              </div>
+            </div>
+
+            <div class="card bg-success mb-2">
+              <div class="card-block">
+                <h4>
+                  Kilograms:
+                </h4>
+                <div id="kgOutput"></div>
+              </div>
+            </div>
+
+            <div class="card bg-danger mb-2">
+              <div class="card-block">
+                <h4>
+                  Ounces:
+                </h4>
+                <div id="ozOutput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //This will hide the converted cards in the initail state
+      document.getElementById("output").style.visibility = "hidden";
+      // Listen for type event, then grab the whatever is being typed
+      document.getElementById("ibsInput").addEventListener("input", e => {
+        document.getElementById("output").style.visibility = "visible";
+
+        let lbs = e.target.value;
+        //Convert pounds to appropriate unit
+        document.getElementById("gramsOutput").innerHTML = lbs / 0.0022046;
+        document.getElementById("kgOutput").innerHTML = lbs / 2.2046;
+        document.getElementById("ozOutput").innerHTML = lbs * 16;
+      });
+    </script>
+  </body>
+</html>

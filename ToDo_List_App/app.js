@@ -43,7 +43,7 @@ addToDo("Push Code");
 //Listen to the enter key
 document.addEventListener("keyup", function(event) {
   if (event.keyCode == 13) {
-    const toDo = input.value;
+    const toDo = event.target.value;
 
     if (toDo) {
       addToDo(toDo);
