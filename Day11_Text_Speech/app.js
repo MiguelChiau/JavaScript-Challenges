@@ -41,16 +41,16 @@ const speak = () => {
     return;
   }
   //Check if the text input submitted is not empty
-  if (textInput.value !== " ") {
-    const speakTest = new SpeechSynthesisUtterance(textInput.value);
+  if (testInput.value !== " ") {
+    const speakTest = new SpeechSynthesisUtterance(testInput.value);
 
-    //The end of the speech
-    speakText.onend = e => {
+    // The end of the speech
+    speakTest.onend = e => {
       console.log("Done speaking...");
     };
 
     //In case of speak error
-    speakText.onerror = e => {
+    speakTest.onerror = e => {
       console.error("There was an issue");
     };
 
@@ -60,17 +60,17 @@ const speak = () => {
     );
 
     //Looping through voices
-    voices.forEach(voices => {
-      if (voice.ane === selectedVoice) {
-        speakText.voice = value;
+    voices.forEach(voice => {
+      if (voice.name === selectedVoice) {
+        speakTest.voice = voice;
       }
     });
 
     //To set the pitch and rate
-    speakText.rate = rate.value;
-    speakText.pitch = rate.pitch;
+    speakTest.rate = rate.value;
+    speakTest.pitch = pitch.value;
     //Then to actualy speak
-    synth.speak(speakText);
+    synth.speak(speakTest);
   }
 };
 
@@ -78,7 +78,7 @@ const speak = () => {
 textForm.addEventListener("submit", e => {
   e.preventDefault();
   speak();
-  textInput.blur();
+  testInput.blur();
 });
 
 //The changes in  rate and pitch values
