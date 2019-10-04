@@ -3,6 +3,7 @@ This project is a 30 day vanila JavaScript coding challenge.
 The goal is to work on JS fundamentals, DOM manipulation without a library; And it relies upon browser APIs.
 
 #The live demos are included bellow:
+
 https://miguelchiau.github.io/JavaScript30Day-Challenge/Day11_Text_Speech/
 
 https://miguelchiau.github.io/JavaScript30Day-Challenge/Day10_Face_Detection/
