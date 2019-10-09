@@ -19,3 +19,5 @@ https://miguelchiau.github.io/JavaScript30Day-Challenge/Day3_js_css_variables/
 https://miguelchiau.github.io/JavaScript30Day-Challenge/Day2_JS_clock/
 
 https://miguelchiau.github.io/JavaScript30Day-Challenge/Day1_Drum_Kit/
+
+https://miguelchiau.github.io/JavaScript30Day-Challenge/Day12_Game/
