@@ -70,11 +70,14 @@ h1 {
   top: 0;
 }
 
-button {
+/* button {
   width: 100px;
   height: 30px;
   background-color: aqua;
   color: white;
   border: 1px solid aqua;
-  border-radius: 50%;
-}
+  border-radius: 50px;
+  justify-content: center;
+  margin-left: 200p;
+  margin-right: auto;
+} */
