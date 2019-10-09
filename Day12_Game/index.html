@@ -14,93 +14,46 @@
     />
   </head>
   <body class="bg-info text-white">
-    <h1 class="mt-5">Whack-A-Mole Game 👻! <span class="score">0</span></h1>
-    <div class="text-center">
-      <button onClick="startGame()" class="btn bg-primary btn-md ">
-        Start!
-      </button>
+    <div id="particles-js">
+      <h1 class="mt-5">Whack-A-Mole Game 👻! <span class="score">0</span></h1>
+      <div class="text-center">
+        <a href="#" onClick="startGame()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Start Game!
+        </a>
+      </div>
+
+      <div class="game">
+        <div class="hole hole1">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole2">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole3">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole4">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole5">
+          <div class="mole"></div>
+        </div>
+        <div class="hole hole6">
+          <div class="mole"></div>
+        </div>
+      </div>
     </div>
 
-    <div class="game">
-      <div class="hole hole1">
-        <div class="mole"></div>
-      </div>
-      <div class="hole hole2">
-        <div class="mole"></div>
-      </div>
-      <div class="hole hole3">
-        <div class="mole"></div>
-      </div>
-      <div class="hole hole4">
-        <div class="mole"></div>
-      </div>
-      <div class="hole hole5">
-        <div class="mole"></div>
-      </div>
-      <div class="hole hole6">
-        <div class="mole"></div>
-      </div>
-    </div>
-
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-      const holes = document.querySelectorAll(".hole");
-      const scoreBoard = document.querySelector(".score");
-      const moles = document.querySelectorAll(".mole");
-      let lastHole;
-      let timeUp = false;
-      let score = 0;
-
-      //To give random amount of time between min and max in miliseconds
-      function randomTime(min, max) {
-        return Math.round(Math.random() * (max - min) + min);
-      }
-      //Now to pick a random hole
-      function randomHole(holes) {
-        const idx = Math.floor(Math.random() * holes.length);
-        const hole = holes[idx];
-
-        // to make sure holes don't repeat
-        if (hole === lastHole) {
-          console.log("This hole is repeating!");
-          return randomHole(holes);
-        }
-        lastHole = hole;
-        return hole;
-      }
-
-      //   For the moles to peep out of the holes
-      function peep() {
-        //   Time it takes of the mole to pop up
-        const time = randomTime(200, 1000);
-        // The hole in whcih the mole will come
-        const hole = randomHole(holes);
-        // This class styles will trigger the mole up
-        hole.classList.add("up");
-        //to remove the class of up so the mole goes down
-        setTimeout(() => {
-          hole.classList.remove("up");
-          //Run peep function only if timeup is true
-          if (!timeUp) peep();
-        }, time);
-      }
-
-      function startGame() {
-        scoreBoard.textContent = 0;
-        timeUp = false;
-        score = 0;
-        peep();
-        // The duration of the game is 10000
-        setTimeout(() => (timeUp = true), 10000);
-      }
-      //to make abank on the head of the mole
-      function bonk(e) {
-        // For non-valid clicks
-        if (!e.isTrusted);
-        score++;
-        this.classList.remove("up");
-        scoreBoard.textContent = score;
-      }
-      moles.forEach(mole => mole.addEventListener("click", bonk));
+      particlesJS.load("particles-js", "particles.json", function() {
+        console.log("being loaded");
+      });
     </script>
 
     <script
