@@ -1,5 +1,5 @@
 # JavaScript-Challenges
-This project is a 30 day vanila JavaScript coding challenge.
+This project is a series of vanila JavaScript coding challenges.
 The goal is to work on JS fundamentals, DOM manipulation without a library; And it relies upon browser APIs.
 
 #The live demos are included bellow:
