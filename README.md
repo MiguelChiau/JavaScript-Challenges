@@ -3,7 +3,7 @@
 ### Summary
 
 This project is a series of vanila JavaScript coding challenges.
-The goal is to work on JS fundamentals, DOM manipulation without a library; And it relies upon browser APIs.
+The goal is to work on JS fundamentals, DOM manipulation without a library; and it solely relies on browser APIs.
 
 # Day 1 Drum Kit
 
